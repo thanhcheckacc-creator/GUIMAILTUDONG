@@ -5,7 +5,7 @@ on:
     paths:
       - "camera-report"        # chạy khi file report.md được tạo hoặc sửa
   schedule:
-    - cron: '5 10 * * *'   # chạy mỗi ngày lúc 9h sáng (UTC)
+    - cron: '10 13 * * *'   # chạy mỗi ngày lúc 9h sáng (UTC)
   workflow_dispatch:       # cho phép chạy thủ công
  
 jobs:
