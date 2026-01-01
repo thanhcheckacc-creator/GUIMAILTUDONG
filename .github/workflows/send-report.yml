@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "📑 Báo cáo Camera hằng ngày"
-          to: "nguoinhan@example.com"
+          to: "SecurityChief@bariaserece.com"
           from: "baocao@example.com"
           body: |
             Đây là báo cáo camera hằng ngày.
