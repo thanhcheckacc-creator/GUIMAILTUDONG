@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - "camera-report"        # chạy khi file report.md được tạo hoặc sửa
-  workflow_dispatch:
   schedule:
     - cron: '5 10 * * *'   # chạy mỗi ngày lúc 9h sáng (UTC)
   workflow_dispatch:       # cho phép chạy thủ công
