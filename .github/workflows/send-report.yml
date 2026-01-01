@@ -1,0 +1,28 @@
+name: 📧 Send Camera Report
+ 
+on:
+  schedule:
+    - cron: '55 9 * * *'   # chạy mỗi ngày lúc 9h sáng (UTC)
+  workflow_dispatch:       # cho phép chạy thủ công
+ 
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+ 
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "📑 Báo cáo Camera hằng ngày"
+          to: "nguoinhan@example.com"
+          from: "baocao@example.com"
+          body: |
+            Đây là báo cáo camera hằng ngày.
+            - Ngày giờ báo cáo: ${{ github.event.schedule }}
+            - Nội dung chi tiết: xem file report.md trong repo.
