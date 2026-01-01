@@ -6,7 +6,7 @@ on:
       - "camera-report"        # chạy khi file report.md được tạo hoặc sửa
   workflow_dispatch:
   schedule:
-    - cron: '55 9 * * *'   # chạy mỗi ngày lúc 9h sáng (UTC)
+    - cron: '5 10 * * *'   # chạy mỗi ngày lúc 9h sáng (UTC)
   workflow_dispatch:       # cho phép chạy thủ công
  
 jobs:
@@ -19,8 +19,8 @@ jobs:
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com
-          server_port: 465
+          server_address: smtp.office365.com
+          server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "📑 Báo cáo Camera hằng ngày"
